@@ -1,24 +1,23 @@
 package spring.com.cua_hang_thuoc.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
+import java.time.LocalDate;
 
 @Entity
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Supplier {
+public class Employee {
 
     @Id
     @Column(columnDefinition = "varchar(25)")
-    String supplierCode;
+    String empCode;
 
     @Column(columnDefinition = "nvarchar(25)")
-    String supplierName;
+    String empName;
 
     @Column(columnDefinition = "nvarchar(50)")
     String address;
@@ -26,16 +25,16 @@ public class Supplier {
     @Column(columnDefinition = "varchar(11)")
     String numberPhone;
 
-    @Column(columnDefinition = "varchar(25)")
-    String mail;
+    @Column(columnDefinition = "date")
+    LocalDate createdDate;
 
-    @Column(columnDefinition = "nvarchar(50)")
-    String description;
+    @Column(columnDefinition = "varchar(25)")
+    String account;
+
+    @Column(columnDefinition = "varchar(25)")
+    String position;
 
     @Column(columnDefinition = "bit default 1")
     boolean status = true;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "supplier")
-    List<SupplierInvoice> supplierInvoiceList;
 }
