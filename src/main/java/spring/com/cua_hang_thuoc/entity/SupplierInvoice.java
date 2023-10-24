@@ -21,7 +21,7 @@ public class SupplierInvoice {
     String detailCode;
 
     @Column(columnDefinition = "date")
-    LocalDate createDate;
+    LocalDate createdDate;
 
     @Column(columnDefinition = "time")
     LocalTime createdTime;
